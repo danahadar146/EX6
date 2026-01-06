@@ -10,13 +10,15 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.graphics.Insets;
 import androidx.core.view.WindowInsetsCompat;
 import android.graphics.Color;
+import android.graphics.Typeface;
 
 public class MainActivity extends AppCompatActivity {
 
     Button btn;
     private TextView txt;
     boolean flag = true;
-    int i;
+    int i=1;
+    int counter=0;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -33,13 +35,22 @@ public class MainActivity extends AppCompatActivity {
         txt.setText("");
         txt.setTextSize(50);
         txt.setTextColor(Color.RED);
+        txt.setTypeface(null,Typeface.BOLD_ITALIC);
     }
 
 
     public void clicked(View view) {
-        btn.setText("Click me !");
-        i=i+1;
-        txt.setText("this is a click number: "+i);
+        if (counter <5) {
+        txt.setText("this is click number: " + i);
+        i = i + 1;
+        counter = counter + 1;
     }
-}
+        else{
+        txt.setText("Enough to click. Go to new start!");
+        counter=0;
+        i=0;
+            }
+        }
+    }
+
 
