@@ -36,19 +36,21 @@ public class MainActivity extends AppCompatActivity {
         txt.setTextSize(50);
         txt.setTextColor(Color.RED);
         txt.setTypeface(null,Typeface.BOLD_ITALIC);
+        txt.setShadowLayer(10, 10, 10, Color.GRAY);
+
     }
 
 
     public void clicked(View view) {
-        if (counter <5) {
+        if (counter <6) {
         txt.setText("this is click number: " + i);
         i = i + 1;
         counter = counter + 1;
     }
         else{
-        txt.setText("Enough to click. Go to new start!");
+        txt.setText("BOOM!");
         counter=0;
-        i=0;
+        i=i+1;
             }
         }
     }
