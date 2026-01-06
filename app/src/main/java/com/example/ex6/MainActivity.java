@@ -9,13 +9,14 @@ import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.graphics.Insets;
 import androidx.core.view.WindowInsetsCompat;
+import android.graphics.Color;
 
 public class MainActivity extends AppCompatActivity {
 
     Button btn;
     private TextView txt;
     boolean flag = true;
-
+    int i;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -31,12 +32,14 @@ public class MainActivity extends AppCompatActivity {
         txt = findViewById(R.id.txt);
         txt.setText("");
         txt.setTextSize(50);
+        txt.setTextColor(Color.RED);
     }
 
 
     public void clicked(View view) {
         btn.setText("Click me !");
-        txt.setText("Oh, yea, I’ve been clicked!");
+        i=i+1;
+        txt.setText("this is a click number: "+i);
     }
 }
 
